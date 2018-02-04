@@ -1,3 +1,14 @@
+<h2>Create new user</h2>
+<%= form_for :user, url: { action: "create" } do |f| %>
+	Username: <%= f.text_field :username, placeholder: "Your username here" %><br />
+	Email: <%= f.text_field :email, placeholder: "Email address here" %><br />
+	Password: <%= f.password_field :password %><br />
+	<%= f.submit %>
+<% end %>
+
+
+<!--
+
 <%= form_tag('/users', method: "post") do %>
 
 <%= label_tag(:q, "User Name") %>
@@ -12,7 +23,7 @@
 <%= submit_tag("Create") %>
 
 <% end %>
-
+-->
 
 <!--
 <form accept-charset="UTF-8" action="/users" method="post">

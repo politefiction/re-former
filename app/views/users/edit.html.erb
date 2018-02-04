@@ -1,0 +1,19 @@
+<h2>Edit Current User</h2>
+<%= form_for @user, method: "patch", url: { action: "update" } do |f| %>
+	Username: <%= f.text_field :username, placeholder: "Your username here" %><br />
+	Email: <%= f.text_field :email, placeholder: "Email address here" %><br />
+	Password: <%= f.password_field :password %><br />
+	<%= f.submit %>
+<% end %>
+
+
+<div class="field_with_errors">
+	<% if @user.errors.any? %>
+	<p>The following errors have occurred:</p>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		<% end %>
+		</ul>
+</div>
